@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>phantomx_description</name>
+  <version>0.1.0</version>
+  <description>Describes Phantom X robot model for Gazebo</description>
+
+  <maintainer email="pc@humarobotics.com">Philippe Capdepuy</maintainer>
+
+
+  <license>BSD</license>
+
+
+  <url type="website">http://wiki.ros.org/phantomx_description</url>
+
+
+  <author email="pc@humarobotics.com">Philippe Capdepuy</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>
