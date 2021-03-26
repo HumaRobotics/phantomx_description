@@ -4,8 +4,9 @@
 <xacro:property name="connect_offset" value="0.02633" />
 <xacro:property name="thigh_offset_y" value="-0.0645" />
 <xacro:property name="thigh_offset_z" value="-0.0145" />
-
-
+<xacro:property name="body_color" value="Gazebo/Red" />
+<xacro:property name="tibia_color" value="Gazebo/Green" />
+<xacro:property name="thigh_color" value="Gazebo/Blue" />
 
 <xacro:macro name="phantomx" params="parent *origin">
 
@@ -30,9 +31,6 @@
             <!--box size="0.102 0.109 0.106" /-->
             <mesh filename="package://phantomx_description/meshes/body.STL"  scale="1 1 1"/>
           </geometry>
-          <material name="Grey">
-            <color rgba="0.20 0.20 0.20 1.0"/>
-          </material>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0" />
@@ -45,7 +43,7 @@
 
 
       <gazebo reference="MP_BODY">    
-        <material>Gazebo/Grey</material>
+        <material>${body_color}</material>
       </gazebo>
 
 
@@ -80,9 +78,6 @@
         <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://phantomx_description/meshes/connect.STL"  scale="1 1 1"/>
       </geometry>
-      <material name="Grey">
-        <color rgba="0.20 0.20 0.20 1.0"/>
-      </material>
     </visual>
     <collision>
       <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
@@ -105,9 +100,6 @@
         <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://phantomx_description/meshes/connect.STL"  scale="1 1 1"/>
       </geometry>
-      <material name="Grey">
-        <color rgba="0.20 0.20 0.20 1.0"/>
-      </material>
     </visual>
     <collision>
       <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
@@ -131,9 +123,6 @@
         <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://phantomx_description/meshes/thigh_l.STL"  scale="1 1 1"/>
       </geometry>
-      <material name="Grey">
-        <color rgba="0.20 0.20 0.20 1.0"/>
-      </material>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"  />
@@ -157,9 +146,6 @@
         <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://phantomx_description/meshes/tibia_l.STL"  scale="1 1 1"/>
       </geometry>
-      <material name="Grey">
-        <color rgba="0.20 0.20 0.20 1.0"/>
-      </material>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"  />
@@ -242,19 +228,19 @@
 
 
   <gazebo reference="c1_${suffix}">    
-    <material>Gazebo/Grey</material>
+    <material>${body_color}</material>
   </gazebo>
 
   <gazebo reference="c2_${suffix}">    
-    <material>Gazebo/Grey</material>
+    <material>${thigh_color}</material>
   </gazebo>
 
   <gazebo reference="thigh_${suffix}">    
-    <material>Gazebo/Grey</material>
+    <material>${thigh_color}</material>
   </gazebo>
 
   <gazebo reference="tibia_${suffix}">    
-    <material>Gazebo/Grey</material>
+    <material>${tibia_color}</material>
   </gazebo>
 
   
